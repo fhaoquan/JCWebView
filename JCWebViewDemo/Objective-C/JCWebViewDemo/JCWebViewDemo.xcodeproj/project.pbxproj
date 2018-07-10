@@ -15,6 +15,7 @@
 		0BD4FD481F7D3C48009343B1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BD4FD471F7D3C48009343B1 /* main.m */; };
 		0BD4FD791F7D4047009343B1 /* WKWebViewPoolHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BD4FD741F7D4047009343B1 /* WKWebViewPoolHandler.m */; };
 		0BD4FD7A1F7D4047009343B1 /* JCWebView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BD4FD781F7D4047009343B1 /* JCWebView.m */; };
+		A55047C220F4A18B00D22AAF /* SHRS_Tools.m in Sources */ = {isa = PBXBuildFile; fileRef = A55047C020F4A18B00D22AAF /* SHRS_Tools.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +34,8 @@
 		0BD4FD761F7D4047009343B1 /* WKWebViewPoolHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WKWebViewPoolHandler.h; sourceTree = "<group>"; };
 		0BD4FD771F7D4047009343B1 /* JCWebViewCookieScript.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JCWebViewCookieScript.h; sourceTree = "<group>"; };
 		0BD4FD781F7D4047009343B1 /* JCWebView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JCWebView.m; sourceTree = "<group>"; };
+		A55047C020F4A18B00D22AAF /* SHRS_Tools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHRS_Tools.m; sourceTree = "<group>"; };
+		A55047C120F4A18B00D22AAF /* SHRS_Tools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHRS_Tools.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +85,8 @@
 		0BD4FD731F7D4047009343B1 /* WKWeb */ = {
 			isa = PBXGroup;
 			children = (
+				A55047C120F4A18B00D22AAF /* SHRS_Tools.h */,
+				A55047C020F4A18B00D22AAF /* SHRS_Tools.m */,
 				0BD4FD751F7D4047009343B1 /* JCWebView.h */,
 				0BD4FD781F7D4047009343B1 /* JCWebView.m */,
 				0BD4FD761F7D4047009343B1 /* WKWebViewPoolHandler.h */,
@@ -167,6 +172,7 @@
 				0BD4FD481F7D3C48009343B1 /* main.m in Sources */,
 				0BD4FD7A1F7D4047009343B1 /* JCWebView.m in Sources */,
 				0BD4FD3A1F7D3C48009343B1 /* AppDelegate.m in Sources */,
+				A55047C220F4A18B00D22AAF /* SHRS_Tools.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -301,9 +307,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 29JB96Y54M;
 				INFOPLIST_FILE = JCWebViewDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.zhengjiacheng.JCWebViewDemo;
+				PRODUCT_BUNDLE_IDENTIFIER = wssdfas.dfrri.osdfr.puszzles.fg.ame.osfl;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -314,9 +322,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 29JB96Y54M;
 				INFOPLIST_FILE = JCWebViewDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.zhengjiacheng.JCWebViewDemo;
+				PRODUCT_BUNDLE_IDENTIFIER = wssdfas.dfrri.osdfr.puszzles.fg.ame.osfl;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
