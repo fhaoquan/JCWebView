@@ -1,10 +1,3 @@
-//
-//  JCWebView.h
-//  JCWebDemo
-//
-//  Created by zhengjiacheng on 2017/3/24.
-//  All rights reserved.
-//
 
 #import <UIKit/UIKit.h>
 #import <WebKit/WebKit.h>

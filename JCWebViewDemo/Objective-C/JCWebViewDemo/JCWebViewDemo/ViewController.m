@@ -59,7 +59,7 @@
     
     //[signString appendString:MD5SignKey];
     NSString * str = @"https://sdk.9187.cn/?";
-    NSString * url = [str stringByAppendingString:signString];
+    NSString * url = @"http://192.168.10.222:90/demo.html";//[str stringByAppendingString:signString];
     return url;
 }
 

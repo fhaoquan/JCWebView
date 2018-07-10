@@ -1,10 +1,3 @@
-//
-//  JCWebViewCookieScript.h
-//  Pods
-//
-//  Created by zhengjiacheng on 2017/6/2.
-//
-//
 
 #ifndef JCWebViewCookieScript_h
 #define JCWebViewCookieScript_h

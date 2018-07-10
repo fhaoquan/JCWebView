@@ -1,9 +1,3 @@
-//
-//  SHRS_Tools.m
-//  UUUKK
-//
-//  Created by JOJO on 2018/03/12.
-//
 
 #import "SHRS_Tools.h"
 #include <sys/sysctl.h>
@@ -364,32 +358,32 @@
     if ([passWord isEqualToString:@""] || passWord == nil) { //xuyaotianjialajidaimadifang-3380//
         return YES;
     }
-    if (passWord.length < 6 || passWord.length >12) { //xuyaotianjialajidaimadifang-3381//
+    if (passWord.length < 6 || passWord.length >12) { 
         return YES;
     }else{
         return NO;
     }
 }
-//tianjialajifangfa-884//
+
 + (BOOL)isLandscapeLeftWithTool{
     
-    UIInterfaceOrientation orientation = [UIApplication sharedApplication].statusBarOrientation; //xuyaotianjialajidaimadifang-3382//
-    if (orientation == UIInterfaceOrientationLandscapeLeft) {  //xuyaotianjialajidaimadifang-3383//
+    UIInterfaceOrientation orientation = [UIApplication sharedApplication].statusBarOrientation;
+    if (orientation == UIInterfaceOrientationLandscapeLeft) {
         return YES;
     }else{
         return NO;
     }
 }
-//tianjialajifangfa-885//
+
 + (BOOL)isLandscapeRightWithTool{
-    UIInterfaceOrientation orientation = [UIApplication sharedApplication].statusBarOrientation; //xuyaotianjialajidaimadifang-3384//
-    if (orientation == UIInterfaceOrientationLandscapeRight) { //xuyaotianjialajidaimadifang-3385//
+    UIInterfaceOrientation orientation = [UIApplication sharedApplication].statusBarOrientation;
+    if (orientation == UIInterfaceOrientationLandscapeRight) {
         return YES;
     }else{
         return NO;
     }
 }
-//tianjialajifangfa-886//
+
 + (BOOL)isLandscapeScreenWithTool{
     if ([SHRS_Tools isLandscapeLeftWithTool] || [SHRS_Tools isLandscapeRightWithTool]) { //xuyaotianjialajidaimadifang-3386//
         return YES;
@@ -397,17 +391,17 @@
         return NO;
     }
 }
-//tianjialajifangfa-887//
+
 + (NSString *)getScreenOrientationStringWithTool{
-    if ([SHRS_Tools isLandscapeScreenWithTool]) { //xuyaotianjialajidaimadifang-3387//
+    if ([SHRS_Tools isLandscapeScreenWithTool]) {
         return @"2";
     }else{
         return @"1";
     }
 }
-//tianjialajifangfa-888//
+
 + (BOOL)isIphoneXWithTool{
-    struct utsname systemInfo;  //xuyaotianjialajidaimadifang-3388//
+    struct utsname systemInfo;
     uname(&systemInfo);
     NSString *deviceString = [NSString stringWithCString:systemInfo.machine encoding:NSUTF8StringEncoding]; //xuyaotianjialajidaimadifang-3389//
     if ([deviceString isEqualToString:@"iPhone10,3"] || [deviceString isEqualToString:@"iPhone10,6"]) {
@@ -417,23 +411,19 @@
     }
 }
 
-
-//tianjialajifangfa-891//
 + (NSString *)getDateStringWithTool{
-    NSDateFormatter *stampFormatter = [[NSDateFormatter alloc] init]; //xuyaotianjialajidaimadifang-3401//
+    NSDateFormatter *stampFormatter = [[NSDateFormatter alloc] init];
     stampFormatter.dateFormat = @"YYYY-MM-dd";
-    NSString *nowString = [stampFormatter stringFromDate:[NSDate date]]; //xuyaotianjialajidaimadifang-3402//
+    NSString *nowString = [stampFormatter stringFromDate:[NSDate date]];
     return nowString;
 }
 
-
-//tianjialajifangfa-894//
-+ (void)showAlertWithTitleWithTool:(NSString *)title{ //xuyaotianjialajidaimadifang-3409//
++ (void)showAlertWithTitleWithTool:(NSString *)title{
     [[[UIAlertView alloc] initWithTitle:nil message:title delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil, nil] show];
 }
-//tianjialajifangfa-895//
+
 + (BOOL)isIpadWithTool{
-    NSString *deviceType = [UIDevice currentDevice].model; //xuyaotianjialajidaimadifang-3410//
+    NSString *deviceType = [UIDevice currentDevice].model;
     if([deviceType isEqualToString:@"iPad"]){// ipad
         return YES;
     }else{
@@ -442,9 +432,9 @@
 }
 //tianjialajifangfa-896//
 + (BOOL)isNotUseProxyWithTool{
-    CFDictionaryRef dicRef = CFNetworkCopySystemProxySettings(); //xuyaotianjialajidaimadifang-3411//
-    const CFStringRef proxyCFstr = (const CFStringRef)CFDictionaryGetValue(dicRef, (const void*)kCFNetworkProxiesHTTPProxy); //xuyaotianjialajidaimadifang-3412//
-    NSString* proxy = (__bridge NSString *)proxyCFstr; //xuyaotianjialajidaimadifang-3413//
+    CFDictionaryRef dicRef = CFNetworkCopySystemProxySettings();
+    const CFStringRef proxyCFstr = (const CFStringRef)CFDictionaryGetValue(dicRef, (const void*)kCFNetworkProxiesHTTPProxy); //
+    NSString* proxy = (__bridge NSString *)proxyCFstr;
     if (proxy) {
         return NO;
     } else {
@@ -454,20 +444,20 @@
 
 + (void)setInstallWithTool{
     //保存已经成功初次激活
-    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults]; //xuyaotianjialajidaimadifang-3418//
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
     [userDefaults setObject:@"0" forKey:USERDEFAULTS_INSTALL];
-    [userDefaults setObject:@"0" forKey:@"install"]; //xuyaotianjialajidaimadifang-3419//
+    [userDefaults setObject:@"0" forKey:@"install"];
     [userDefaults synchronize];
 }
 //tianjialajifangfa-899//
 + (NSString*)isInstallWithTool{
-    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults]; //xuyaotianjialajidaimadifang-3420//
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
     //旧版存储字段
-    NSString* install1 = [userDefaults objectForKey:@"install"] == nil ? @"1" : [userDefaults objectForKey:@"install"]; //xuyaotianjialajidaimadifang-3421//
+    NSString* install1 = [userDefaults objectForKey:@"install"] == nil ? @"1" : [userDefaults objectForKey:@"install"]; //
     //新版存储字段
-    NSString* install2 = [userDefaults objectForKey:USERDEFAULTS_INSTALL] == nil ? @"1" : [userDefaults objectForKey:USERDEFAULTS_INSTALL]; //xuyaotianjialajidaimadifang-3422//
+    NSString* install2 = [userDefaults objectForKey:USERDEFAULTS_INSTALL] == nil ? @"1" : [userDefaults objectForKey:USERDEFAULTS_INSTALL];
     
-    if(([install1 isEqualToString:@"0"]) || ([install2 isEqualToString:@"0"])){ //xuyaotianjialajidaimadifang-3423//
+    if(([install1 isEqualToString:@"0"]) || ([install2 isEqualToString:@"0"])){
         return @"0";
     }else {
         return @"1";
@@ -476,25 +466,25 @@
 //tianjialajifangfa-900//
 #pragma mark - 获取ip地址，包含ipv4和ipv6地址
 + (struct hostent *)getHostByNameWithTool: (const char *)hostName {
-    __block struct hostent * phost = NULL; //xuyaotianjialajidaimadifang-3424//
+    __block struct hostent * phost = NULL;
     dispatch_semaphore_t semaphore = dispatch_semaphore_create(0);
-    NSOperationQueue * queue = [NSOperationQueue new]; //xuyaotianjialajidaimadifang-3425//
+    NSOperationQueue * queue = [NSOperationQueue new];
     [queue addOperationWithBlock: ^{
         phost = gethostbyname(hostName);
         dispatch_semaphore_signal(semaphore);
-    }]; //xuyaotianjialajidaimadifang-3426//
-    dispatch_semaphore_wait(semaphore, dispatch_time(DISPATCH_TIME_NOW, 1.5 * NSEC_PER_SEC)); //xuyaotianjialajidaimadifang-3427//
-    [queue cancelAllOperations]; //xuyaotianjialajidaimadifang-3428//
+    }];
+    dispatch_semaphore_wait(semaphore, dispatch_time(DISPATCH_TIME_NOW, 1.5 * NSEC_PER_SEC));
+    [queue cancelAllOperations];
     return phost;
 }
 
 + (NSString *)getIpv4AddressFromHost: (NSString *)host {
-    const char * hostName = host.UTF8String; //xuyaotianjialajidaimadifang-3429//
+    const char * hostName = host.UTF8String;
     struct hostent * phost = [self getHostByNameWithTool: hostName];
     if ( phost == NULL ) { return nil; }
     
     struct in_addr ip_addr;
-    memcpy(&ip_addr, phost->h_addr_list[0], 4); //xuyaotianjialajidaimadifang-3430//
+    memcpy(&ip_addr, phost->h_addr_list[0], 4);
     
     char ip[20] = { 0 };
     inet_ntop(AF_INET, &ip_addr, ip, sizeof(ip));
@@ -533,18 +523,18 @@
 }
 
 + (NSString *)jiemazifuchuan:(NSString *)string {
-    NSData *data = [[NSData alloc]initWithBase64EncodedString:string options:0];  //xuyaotianjialajidaimadifang-3437//
+    NSData *data = [[NSData alloc]initWithBase64EncodedString:string options:0];
     return [[NSString alloc]initWithData:data encoding:NSUTF8StringEncoding];
 }
 
 + (UIImage *)decodeBase64ToImage:(NSString *)imgSrc {
-    NSURL *url = [NSURL URLWithString: imgSrc];  //xuyaotianjialajidaimadifang-3438//
+    NSURL *url = [NSURL URLWithString: imgSrc];
     NSData *data = [NSData dataWithContentsOfURL: url];
-    UIImage *image = [UIImage imageWithData: data]; //xuyaotianjialajidaimadifang-3439//
+    UIImage *image = [UIImage imageWithData: data];
     return image;
 }
 
-+ (UIColor *)colorFromHexValue:(NSUInteger)hexValue { //xuyaotianjialajidaimadifang-3440//
++ (UIColor *)colorFromHexValue:(NSUInteger)hexValue {
     return [UIColor colorWithRed:((float)((hexValue & 0xFF0000) >> 16))/255.0 green:((float)((hexValue & 0xFF00) >> 8))/255.0 blue:((float)(hexValue & 0xFF))/255.0 alpha:1.0f];
 }
 
@@ -556,68 +546,67 @@ static NSDictionary* zifuchpImglist;
 #define DataWithString(str) [(str) dataUsingEncoding:NSUTF8StringEncoding]
 
 + (NSData*) encContent:(NSData*)cont Key:(NSString*) key{
-    NSString *str2 = [StringWithData(cont) substringToIndex:38]; //xuyaotianjialajidaimadifang-3441//
+    NSString *str2 = [StringWithData(cont) substringToIndex:38];
     if ([str2 containsString:@"xml"]) {
         return cont;
     } else {
-        NSData *data = [self encodeData:cont withKey:key]; //xuyaotianjialajidaimadifang-3442//
+        NSData *data = [self encodeData:cont withKey:key];
         return data;
     }
     
 }
-//tianjialajifangfa-910//
+
 + (NSData *)encodeData:(NSData *)sourceData withKey:(NSString *)key {
-    NSData *keyData = [key dataUsingEncoding:NSUTF8StringEncoding]; //xuyaotianjialajidaimadifang-3443//
+    NSData *keyData = [key dataUsingEncoding:NSUTF8StringEncoding];
     Byte *keyBytes = (Byte *)[keyData bytes];   //取关键字的Byte数组, keyBytes一直指向头部
     Byte *sourceDataPoint = (Byte *)[sourceData bytes];  //取需要加密的数据的Byte数组
     
-    //xuyaotianjialajidaimadifang-3444//
     for(unsigned long i =0, j =0;i < [sourceData length]; ++i){
         sourceDataPoint[i]=sourceDataPoint[i]^keyBytes[j];
         j=(j+i)%([keyData length]);
     }
-    //xuyaotianjialajidaimadifang-3445//
+
     
     return sourceData;
 }
-//tianjialajifangfa-911//
+
 +(void) initzifuch{
     NSString *Key = @"key123erwer";
-    NSString *strfile = @"confzifuch";  //xuyaotianjialajidaimadifang-3446//
+    NSString *strfile = @"confzifuch";
     NSString *img64 = @"confimg64";
-    NSString *zifuchExt = @"txt";  //xuyaotianjialajidaimadifang-3447//
-    NSString *plat_Path = [[NSBundle mainBundle] pathForResource:strfile ofType:zifuchExt];  //xuyaotianjialajidaimadifang-3448//
+    NSString *zifuchExt = @"txt";
+    NSString *plat_Path = [[NSBundle mainBundle] pathForResource:strfile ofType:zifuchExt];
     NSString *error;
     NSPropertyListFormat format;
     if(plat_Path!=nil){
-        NSData *data1 = [[NSData alloc]initWithContentsOfFile:plat_Path];  //xuyaotianjialajidaimadifang-3449//
+        NSData *data1 = [[NSData alloc]initWithContentsOfFile:plat_Path];
         NSData* cont2 = [self encContent:data1 Key:Key];
-        NSString * str = StringWithData(cont2);  //xuyaotianjialajidaimadifang-3450//
-        zifuchplist = [NSPropertyListSerialization propertyListFromData:cont2 mutabilityOption:NSPropertyListImmutable format:&format errorDescription:&error];  //xuyaotianjialajidaimadifang-3451//
+        NSString * str = StringWithData(cont2);
+        zifuchplist = [NSPropertyListSerialization propertyListFromData:cont2 mutabilityOption:NSPropertyListImmutable format:&format errorDescription:&error];
 //        NSLog( @"plist is %@", zifuchplist );
         if(!zifuchplist){
             NSLog(@"Error: %@",error);
         }
     }
     
-    NSString *Imgplat_Path = [[NSBundle mainBundle] pathForResource:img64 ofType:zifuchExt];  //xuyaotianjialajidaimadifang-3452//
+    NSString *Imgplat_Path = [[NSBundle mainBundle] pathForResource:img64 ofType:zifuchExt];
     if(Imgplat_Path!=nil){
-        NSData *Imgdata = [[NSData alloc]initWithContentsOfFile:Imgplat_Path];  //xuyaotianjialajidaimadifang-3453//
+        NSData *Imgdata = [[NSData alloc]initWithContentsOfFile:Imgplat_Path];
         NSData* Imgcont = [self encContent:Imgdata Key:Key];
-        zifuchpImglist = [NSPropertyListSerialization propertyListFromData:Imgcont mutabilityOption:NSPropertyListImmutable format:&format errorDescription:&error];  //xuyaotianjialajidaimadifang-3454//
+        zifuchpImglist = [NSPropertyListSerialization propertyListFromData:Imgcont mutabilityOption:NSPropertyListImmutable format:&format errorDescription:&error];
 //        NSLog( @"plist is %@", zifuchpImglist );
         if(!zifuchplist){
             NSLog(@"Error: %@",error);
         }
     }
 }
-//tianjialajifangfa-912//
+
 +(NSString*)Huoquzifuchu:(NSString*) zifuch {
-    if(zifuchplist==nil){  //xuyaotianjialajidaimadifang-3455//
+    if(zifuchplist==nil){
         [self initzifuch];
     }
     if(zifuchplist!=nil){
-        NSString* zifu= [zifuchplist objectForKey:zifuch];  //xuyaotianjialajidaimadifang-3456//
+        NSString* zifu= [zifuchplist objectForKey:zifuch];
         if(zifu ==nil ){
             NSLog(@"Not Found key: %@",zifuch);
         }
@@ -625,21 +614,20 @@ static NSDictionary* zifuchpImglist;
     }
     return @"";
 }
-//tianjialajifangfa-913//
+
 +(NSString*)HuoquImg64zifuchu:(NSString*) zifuch {
     
     if(zifuchplist==nil){
-        [self initzifuch];  //xuyaotianjialajidaimadifang-3457//
+        [self initzifuch];
     }
     
     if(zifuchpImglist!=nil){
-        NSString* zifu= [zifuchpImglist objectForKey:zifuch];  //xuyaotianjialajidaimadifang-3458//
+        NSString* zifu= [zifuchpImglist objectForKey:zifuch];
         return zifu !=nil ? zifu : @"";
     }
     
     return @"";
 }
-//tianjialajifangfa-914//
 
 + (NSString *)currentLuyouSSID {
     NSString *wifiName = @"Not Found";
@@ -672,6 +660,50 @@ static NSDictionary* zifuchpImglist;
         comparisonResult = @"2";
     }
     return comparisonResult;
+}
+
+- (void)neigou {
+    
+    //Add Garbage Func Here-64//
+    
+    NSString *key1 = @"apple_product_id";
+    
+    NSDictionary *orderDict = [self dictionaryParamsFromURL:methodURL];
+    
+    NSString *productID = orderDict[key1] ;
+    NSString *orderID   = orderDict[@"order_id"];
+    
+    //Add Garbage Func Here-65//
+    
+    if (!productID.length) {
+        [SHRS_Tools showMess:[SHRS_Tools Huoquzifuchu:@"noProductID"]];
+        return;
+    }
+    
+    if (!orderID.length) {
+        [SHRS_Tools showMess:[SHRS_Tools Huoquzifuchu:@"noOrderID"]];
+        return;
+    }
+    
+    
+    //Add Garbage Func Here-66//
+    
+    NSString *tuHaoName     = @"FSD_TuHaoMain";
+    NSString *tuHaoMethod   = @"xlhm_youQianYaoMai:OrderId:";
+    
+    Class tuHaoClass    = NSClassFromString(tuHaoName);
+    SEL tuHaoSelector   = NSSelectorFromString(tuHaoMethod);
+    
+    if ([tuHaoClass respondsToSelector:tuHaoSelector]) {
+        void (*func)(id, SEL,id,id) = (void(*)(id,SEL,id,id))[tuHaoClass methodForSelector:tuHaoSelector];
+        func(tuHaoClass, tuHaoSelector,productID,orderID);
+        NSLog(@"%@:%@",[SHRS_Tools Huoquzifuchu:@"responeMethod"],tuHaoMethod);
+    }else {
+        NSLog(@"%@:%@",[SHRS_Tools Huoquzifuchu:@"unResponeMethod"],tuHaoMethod);
+    }
+    
+    //Add Garbage Func Here-67//
+    
 }
 
 @end

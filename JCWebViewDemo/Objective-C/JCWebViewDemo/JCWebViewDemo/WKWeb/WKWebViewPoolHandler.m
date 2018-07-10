@@ -1,10 +1,3 @@
-//
-//  WKWebViewPoolHandler.m
-//  Pods
-//
-//  Created by zhengjiacheng on 2017/3/30.
-//
-//
 
 #import "WKWebViewPoolHandler.h"
 

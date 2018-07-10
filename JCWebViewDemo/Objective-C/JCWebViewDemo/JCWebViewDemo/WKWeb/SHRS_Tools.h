@@ -1,9 +1,3 @@
-//
-//  SHRS_Tools.h
-//  UUUKK
-//
-//  Created by JOJO on 2018/03/12.
-//
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>

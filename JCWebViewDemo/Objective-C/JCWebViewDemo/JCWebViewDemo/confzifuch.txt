@@ -1,0 +1,294 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>webapi</key>
+	<string>akocopenapi</string>
+	<key>scheme1</key>
+	<string>http</string>
+	<key>scheme2</key>
+	<string>https</string>
+	<key>scheme3</key>
+	<string>about</string>
+	<key>loadfail</key>
+	<string>加载游戏失败!</string>
+	<key>navuagent</key>
+	<string>navigator.userAgent</string>
+	<key>uagentkey</key>
+	<string>akocsdk-3.0-fixpay</string>
+	<key>uagent</key>
+	<string>UserAgent</string>
+	<key>uagent2</key>
+	<string>User-Agent</string>
+	<key>regback</key>
+	<string>registCallback</string>
+	<key>MemoryWarning</key>
+	<string>[self.webView reload1]</string>
+	<key>MemoryWarning2</key>
+	<string>[self.webView reload2]</string>
+	<key>sysmessage</key>
+	<string>设备型号:%@  系统版本:%@  系统总内存空间:%.2lld MB    空闲的内存空间:%.2lld MB  系统总磁盘:%.2f GB  系统剩余磁盘:%.2f GB</string>
+	<key>matedprog</key>
+	<string>estimatedProgress</string>
+	<key>webcrashupdloadsuc</key>
+	<string>白屏上报成功：%@</string>
+	<key>webcrashupdloadfail</key>
+	<string>白屏上报失败：%@</string>
+	<key>requestingPdata</key>
+	<string>正在获取苹果内购数据...</string>
+	<key>requestTuHaoResult</key>
+	<string>向苹果商店请求订单结果回调</string>
+	<key>tuHaoNullResult</key>
+	<string>没找到苹果内购产品，先去看看你的产品ID是不是正确的吧，瞄这里：</string>
+	<key>iamCrazy</key>
+	<string>我他喵的也是很绝望啊，看失效产品</string>
+	<key>startTuHaoOder</key>
+	<string>开始下单</string>
+	<key>tuHaoAlert</key>
+	<string>请在\&quot;访问限制\&quot;内开启\n\&quot;App内购买项目\&quot;</string>
+	<key>boxDAata</key>
+	<string>获取沙盒数据</string>
+	<key>receiptFail</key>
+	<string>票据校验失败。</string>
+	<key>OrderCunZai</key>
+	<string>订单已存在,请重新下单</string>
+	<key>checkFail</key>
+	<string>验证失败</string>
+	<key>getReceipt</key>
+	<string>获取收据</string>
+	<key>canNotFind</key>
+	<string>联机服务器，获取不到产品</string>
+	<key>recoverTuHao</key>
+	<string>------------恢复已经购买的产品-----------------</string>
+	<key>endTuHao</key>
+	<string>------------反馈信息结束-----------------</string>
+	<key>noNeedCheck</key>
+	<string>订单已存在,无需再校验</string>
+	<key>netError</key>
+	<string>网络出错,请检查当前手机网络状态</string>
+	<key>failTuHao</key>
+	<string>交易失败</string>
+	<key>saveQiongOrder</key>
+	<string>保存订单</string>
+	<key>pleaseWait</key>
+	<string>请稍等...</string>
+	<key>checkAll</key>
+	<string>当前查询的 总订单 </string>
+	<key>qiongBiScheme1</key>
+	<string>dkmweb://</string>
+	<key>qiongBiScheme2</key>
+	<string>dkmweb://openwin?</string>
+	<key>closeScheme</key>
+	<string>dkmweb://closewin</string>
+	<key>responeMethod</key>
+	<string>响应方法</string>
+	<key>unResponeMethod</key>
+	<string>方法不响应</string>
+	<key>fail</key>
+	<string>失败</string>
+	<key>success</key>
+	<string>成功</string>
+	<key>cancel</key>
+	<string>取消</string>
+	<key>requestOrderFail</key>
+	<string>向服务器请求订单失败!</string>
+	<key>notRequestOrder</key>
+	<string>无法请求订单!</string>
+	<key>sdkSuccessCall</key>
+	<string>SDK结果回调</string>
+	<key>sdkFailCall</key>
+	<string>SDK失败回调</string>
+	<key>loginSuccess</key>
+	<string>登录成功</string>
+	<key>loginFail</key>
+	<string>登录失败</string>
+	<key>loginError</key>
+	<string>登录错误</string>
+	<key>noLoginCall</key>
+	<string>没有登录回调</string>
+	<key>logoutSuccess</key>
+	<string>注销成功</string>
+	<key>noLogoutCall</key>
+	<string>没有注销回调</string>
+	<key>switchSuccess</key>
+	<string>切换账号成功</string>
+	<key>noSwitchCall</key>
+	<string>没有切换回调</string>
+	<key>orderSuccess</key>
+	<string>充值成功</string>
+	<key>noOrderCall</key>
+	<string>没有订单回调</string>
+	<key>noCallBackJS</key>
+	<string>回调空不能返回JS</string>
+	<key>gettingOrder</key>
+	<string>请求订单中...</string>
+	<key>clickOrder</key>
+	<string>点击了购买</string>
+	<key>localOrderCheck</key>
+	<string>本地存在服务器订单,可能需要走补单流程</string>
+	<key>localOrderFail</key>
+	<string>补单失败,请稍后再次尝试.</string>
+	<key>localOrderComplete</key>
+	<string>订单已完成,无需补单</string>
+	<key>pleaseLogin</key>
+	<string>请先登录账号</string>
+	<key>createSuccess</key>
+	<string>创建角色成功</string>
+	<key>createFail</key>
+	<string>创建角色成功</string>
+	<key>enterSuccess</key>
+	<string>角色进入游戏成功</string>
+	<key>enterFail</key>
+	<string>角色进入游戏失败</string>
+	<key>levelSuccess</key>
+	<string>角色升级成功</string>
+	<key>levelFail</key>
+	<string>角色升级失败</string>
+	<key>uploadSuccess</key>
+	<string>上报接口成功</string>
+	<key>uploadFail</key>
+	<string>上报接口失败</string>
+	<key>uploadError</key>
+	<string>上报接口错误</string>
+	<key>versionLog</key>
+	<string>版本记录</string>
+	<key>startInit</key>
+	<string>程序启动初始化</string>
+	<key>sendRegCode</key>
+	<string>验证码 body 部分</string>
+	<key>textRegisterDict</key>
+	<string>账号注册 body 部分</string>
+	<key>mobRegister</key>
+	<string>手机注册 body 部分</string>
+	<key>loginDict</key>
+	<string>账号登陆 body 部分</string>
+	<key>mobLoginDict</key>
+	<string>手机登陆 body 部分</string>
+	<key>phoneRegiseterCheck</key>
+	<string>手机注册验证 body 部分</string>
+	<key>randUnameDict</key>
+	<string>自动分配账号 body 部分</string>
+	<key>quickDict</key>
+	<string>quick注册 body 部分</string>
+	<key>clientInitDict</key>
+	<string>初始化 body 部分</string>
+	<key>clientLogin</key>
+	<string>登陆 body 部分</string>
+	<key>newCheckGoumai</key>
+	<string>苹果充值 body 部分</string>
+	<key>newtuHaoMaiMaiMai</key>
+	<string>充值body 部分</string>
+	<key>requestInitAgain</key>
+	<string>重新发送初始化信息</string>
+	<key>NetNotReachable</key>
+	<string>网络状态 ----  没有网络</string>
+	<key>NetUnknow</key>
+	<string>网络状态 ----  未知</string>
+	<key>NetWiFi</key>
+	<string>网络状态 ----  WiFi</string>
+	<key>Net3G4G</key>
+	<string>网络状态 ----  3G|4G</string>
+	<key>applicationPause</key>
+	<string>===&gt; 程序暂行 !</string>
+	<key>applicationBackground</key>
+	<string>===&gt; 程序进入后台 !</string>
+	<key>applicationForceground</key>
+	<string>===&gt; 程序进入前台 !</string>
+	<key>applicationActive</key>
+	<string>===&gt; 程序重新激活 !</string>
+	<key>applicationEnd</key>
+	<string>===&gt; 程序意外暂行 !</string>
+	<key>checkOrderResult</key>
+	<string>查询订单的结果是</string>
+	<key>checkOrderFail</key>
+	<string>订单查询失败！</string>
+	<key>requestData</key>
+	<string>网络请求数据...</string>
+	<key>requestFailNull</key>
+	<string>(结束请求)请求异常,服务器返回空参数</string>
+	<key>requestFailError</key>
+	<string>(结束请求)请求异常,网络出错</string>
+	<key>requestCycleFail</key>
+	<string>(循环请求)请求异常,网络出错</string>
+	<key>requestCycleFailNull</key>
+	<string>(循环请求)请求异常,服务器返回空参数</string>
+	<key>requestingDataHud</key>
+	<string>正在请求数据...</string>
+	<key>checkNetConnect</key>
+	<string>请检查是否连接了可用网络，或点击‘设置’ -&gt; ‘无线数据’ -&gt; 开启‘蜂窝移动网’</string>
+	<key>serverOrderPath</key>
+	<string>服务器订单id存放地址</string>
+	<key>productIDPath</key>
+	<string>产品id存放地址</string>
+	<key>readLocalOrder</key>
+	<string>读取本地订单</string>
+	<key>orderIDExist</key>
+	<string>orderId 已存在</string>
+	<key>tranIDExist</key>
+	<string>tranid 已存在</string>
+	<key>writeOrderSuccess</key>
+	<string>成功写入order</string>
+	<key>writeTranSuccess</key>
+	<string>成功写入tran</string>
+	<key>deleteOrderSuccess</key>
+	<string>成功删除order</string>
+	<key>deleteTranSuccess</key>
+	<string>成功删除tran</string>
+	<key>catchError</key>
+	<string>异常捕获信息</string>
+	<key>checkPart</key>
+	<string>验证body部分</string>
+	<key>modifyPart</key>
+	<string>修改密码 body 部分</string>
+	<key>identifyPart</key>
+	<string>实名认证 body 部分</string>
+	<key>plistParam</key>
+	<string>plat_dict 参数</string>
+	<key>setType</key>
+	<string>错误,必须配置SDKType</string>
+	<key>typeAlert</key>
+	<string>必须在plist文件配置SDKType  现在默认值为2</string>
+	<key>orientationAlert</key>
+	<string>必须在plist文件配置orientation  现在默认值为1</string>
+	<key>gameIDHaveSpace</key>
+	<string>gameId 不能包含空格</string>
+	<key>setGameIDPlease</key>
+	<string>必须在plist文件配置gameId</string>
+	<key>pkgSpaceAlert</key>
+	<string>gamePkg 不能包含空格</string>
+	<key>setPkgPlease</key>
+	<string>必须在plist文件配置gamePkg</string>
+	<key>paramLog</key>
+	<string> -- 参数</string>
+	<key>OrientationUnknown</key>
+	<string>未知方向</string>
+	<key>OrientationLeft</key>
+	<string>home键在右</string>
+	<key>OrientationRight</key>
+	<string>home键在左</string>
+	<key>OrientationPortrait</key>
+	<string>home键在下</string>
+	<key>OrientationUpsideDown</key>
+	<string>home键在上</string>
+	<key>OrientationUnRecognize</key>
+	<string>无法辨识</string>
+	<key>noProductID</key>
+	<string>没有找到产品ID，请配置!!!!</string>
+	<key>noOrderID</key>
+	<string>OrderID can not be found!!!!</string>
+	<key>userTitle</key>
+	<string>用户登录</string>
+	<key>userAccount</key>
+	<string>账号/手机号</string>
+	<key>userCode</key>
+	<string>密码</string>
+	<key>userIn</key>
+	<string>登录</string>
+	<key>userNew</key>
+	<string>注册</string>
+	<key>userProtocol</key>
+	<string>《用户协议》</string>
+	<key>protocolAddress</key>
+	<string>http://sdk.55033.cn/agreement1.html</string>
+</dict>
+</plist>

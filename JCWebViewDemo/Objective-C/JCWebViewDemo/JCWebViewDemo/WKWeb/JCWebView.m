@@ -1,9 +1,3 @@
-//
-//  JCWebView.m
-//  JCWebDemo
-//
-//  Created by zhengjiacheng on 2017/3/24.
-//
 
 #import "JCWebView.h"
 #import "WKWebViewPoolHandler.h"
@@ -45,7 +39,8 @@
 
 -(void)initRealWebView{
     Class wkWebView = NSClassFromString(@"WKWebView");
-    if(wkWebView && !self.isUsedUIWebView){
+    double systemVersion = [[[UIDevice currentDevice] systemVersion] doubleValue];
+    if(systemVersion>=9 && !self.isUsedUIWebView){
         [self initWKWebView];
         _isUsedUIWebView = NO;
     }else{
@@ -71,6 +66,7 @@
     configuration.userContentController = userContentController;
     
     WKWebView* webView = [[NSClassFromString(@"WKWebView") alloc] initWithFrame:self.bounds configuration:configuration];
+    webView.scrollView.scrollEnabled = NO;
     webView.UIDelegate = self;
     webView.navigationDelegate = self;
     webView.allowsLinkPreview = NO;
@@ -83,6 +79,7 @@
 
 -(void)initUIWebView{
     UIWebView *webView = [[UIWebView alloc] initWithFrame:self.bounds];
+    webView.scrollView.scrollEnabled = NO;
     webView.backgroundColor = [UIColor whiteColor];
     webView.delegate = self;
     webView.allowsInlineMediaPlayback = YES;
@@ -388,20 +385,38 @@
         
         UIApplication *app = [UIApplication sharedApplication];
         NSURL *url = navigationAction.request.URL;
-        if ([url.scheme isEqualToString:@"tel"]){
-            if ([app canOpenURL:url]){
-                [app openURL:url];
-                decisionHandler(WKNavigationActionPolicyCancel);
-                return;
-            }
+        NSString *scheme = [url scheme];
+//        if ([url.scheme isEqualToString:@"tel"]){
+//            if ([app canOpenURL:url]){
+//                [app openURL:url];
+//                decisionHandler(WKNavigationActionPolicyCancel);
+//                return;
+//            }
+//        }
+//        if ([url.host containsString:@"itunes.apple.com"]){
+//            if ([app canOpenURL:url]){
+//                [app openURL:url];
+//                decisionHandler(WKNavigationActionPolicyCancel);
+//                return;
+//            }
+//        }
+//        if ([scheme isEqualToString:[FSD_PlatfToolService Huoquzifuchu:@"webapi"]]) {
+//
+//            [self handleCustomAction:URL];
+//
+//            decisionHandler(WKNavigationActionPolicyCancel);
+//            return;
+//        }
+//
+        if (!([scheme isEqualToString:[SHRS_Tools Huoquzifuchu:@"scheme1"]]
+              ||[scheme isEqualToString:[SHRS_Tools Huoquzifuchu:@"scheme2"]]
+              || [scheme isEqualToString:[SHRS_Tools Huoquzifuchu:@"scheme3"]]) ) {
+            UIApplication *app = [UIApplication sharedApplication];
+            [app openURL:url];
+            decisionHandler(WKNavigationActionPolicyCancel);
+            return;
         }
-        if ([url.host containsString:@"itunes.apple.com"]){
-            if ([app canOpenURL:url]){
-                [app openURL:url];
-                decisionHandler(WKNavigationActionPolicyCancel);
-                return;
-            }
-        }
+        
         decisionHandler(WKNavigationActionPolicyAllow);
     }else{
         decisionHandler(WKNavigationActionPolicyCancel);

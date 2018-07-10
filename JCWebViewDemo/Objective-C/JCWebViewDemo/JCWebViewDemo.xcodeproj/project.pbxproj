@@ -16,6 +16,8 @@
 		0BD4FD791F7D4047009343B1 /* WKWebViewPoolHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BD4FD741F7D4047009343B1 /* WKWebViewPoolHandler.m */; };
 		0BD4FD7A1F7D4047009343B1 /* JCWebView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BD4FD781F7D4047009343B1 /* JCWebView.m */; };
 		A55047C220F4A18B00D22AAF /* SHRS_Tools.m in Sources */ = {isa = PBXBuildFile; fileRef = A55047C020F4A18B00D22AAF /* SHRS_Tools.m */; };
+		A55047C420F4DC4F00D22AAF /* confzifuch.txt in Resources */ = {isa = PBXBuildFile; fileRef = A55047C320F4DC4E00D22AAF /* confzifuch.txt */; };
+		A55047C820F5281300D22AAF /* SHRS_IAP.m in Sources */ = {isa = PBXBuildFile; fileRef = A55047C720F5281300D22AAF /* SHRS_IAP.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +38,10 @@
 		0BD4FD781F7D4047009343B1 /* JCWebView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JCWebView.m; sourceTree = "<group>"; };
 		A55047C020F4A18B00D22AAF /* SHRS_Tools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHRS_Tools.m; sourceTree = "<group>"; };
 		A55047C120F4A18B00D22AAF /* SHRS_Tools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHRS_Tools.h; sourceTree = "<group>"; };
+		A55047C320F4DC4E00D22AAF /* confzifuch.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = confzifuch.txt; sourceTree = "<group>"; };
+		A55047C520F4DE2C00D22AAF /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		A55047C620F5281300D22AAF /* SHRS_IAP.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHRS_IAP.h; sourceTree = "<group>"; };
+		A55047C720F5281300D22AAF /* SHRS_IAP.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHRS_IAP.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,8 +82,10 @@
 				0BD4FD3E1F7D3C48009343B1 /* Main.storyboard */,
 				0BD4FD411F7D3C48009343B1 /* Assets.xcassets */,
 				0BD4FD431F7D3C48009343B1 /* LaunchScreen.storyboard */,
+				A55047C320F4DC4E00D22AAF /* confzifuch.txt */,
 				0BD4FD461F7D3C48009343B1 /* Info.plist */,
 				0BD4FD471F7D3C48009343B1 /* main.m */,
+				A55047C520F4DE2C00D22AAF /* PrefixHeader.pch */,
 			);
 			path = JCWebViewDemo;
 			sourceTree = "<group>";
@@ -85,6 +93,8 @@
 		0BD4FD731F7D4047009343B1 /* WKWeb */ = {
 			isa = PBXGroup;
 			children = (
+				A55047C620F5281300D22AAF /* SHRS_IAP.h */,
+				A55047C720F5281300D22AAF /* SHRS_IAP.m */,
 				A55047C120F4A18B00D22AAF /* SHRS_Tools.h */,
 				A55047C020F4A18B00D22AAF /* SHRS_Tools.m */,
 				0BD4FD751F7D4047009343B1 /* JCWebView.h */,
@@ -157,6 +167,7 @@
 				0BD4FD451F7D3C48009343B1 /* LaunchScreen.storyboard in Resources */,
 				0BD4FD421F7D3C48009343B1 /* Assets.xcassets in Resources */,
 				0BD4FD401F7D3C48009343B1 /* Main.storyboard in Resources */,
+				A55047C420F4DC4F00D22AAF /* confzifuch.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -171,6 +182,7 @@
 				0BD4FD3D1F7D3C48009343B1 /* ViewController.m in Sources */,
 				0BD4FD481F7D3C48009343B1 /* main.m in Sources */,
 				0BD4FD7A1F7D4047009343B1 /* JCWebView.m in Sources */,
+				A55047C820F5281300D22AAF /* SHRS_IAP.m in Sources */,
 				0BD4FD3A1F7D3C48009343B1 /* AppDelegate.m in Sources */,
 				A55047C220F4A18B00D22AAF /* SHRS_Tools.m in Sources */,
 			);
@@ -308,6 +320,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 29JB96Y54M;
+				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/JCWebViewDemo/PrefixHeader.pch";
 				INFOPLIST_FILE = JCWebViewDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -323,6 +337,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 29JB96Y54M;
+				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/JCWebViewDemo/PrefixHeader.pch";
 				INFOPLIST_FILE = JCWebViewDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
