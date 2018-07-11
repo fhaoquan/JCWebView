@@ -369,6 +369,43 @@
     return resultBOOL;
 }
 
+#pragma mark - private method
+- (void)handleCustomAction:(NSURL *)URL
+{
+    //Add Garbage Func Here-97//
+    
+    NSString *host = [URL host];
+    
+    __weak typeof (self)weakSelf = self;
+    NSLog(@"host :%@",host);
+    [[FSD_WKWebMethod methodObject] runMethod:host webURL:URL complete:^(NSString *callbackJS, FSD_METHOD_CODE methodCode) {
+        if (callbackJS.length) {
+            [weakSelf.realWebView evaluateJavaScript:callbackJS completionHandler:^(id _Nullable result, NSError * _Nullable error) {
+                
+            }];
+        }
+        
+        //Add Garbage Func Here-98//
+        
+        switch (methodCode) {
+                
+            case FSD_METHOD_LOGOUT:
+                //[weakSelf webViewLoadMainURL];
+                
+                break;
+            case FSD_METHOD_GOBACK:
+                //[weakSelf.realWebView goBack];
+                
+                break;
+            default:
+                
+                break;
+        }
+        
+    }];
+}
+
+
 #pragma mark- WKNavigationDelegate
 -(void)webView:(WKWebView *)webView decidePolicyForNavigationAction:(WKNavigationAction *)navigationAction decisionHandler:(void (^)(WKNavigationActionPolicy))decisionHandler{
 
@@ -386,28 +423,15 @@
         UIApplication *app = [UIApplication sharedApplication];
         NSURL *url = navigationAction.request.URL;
         NSString *scheme = [url scheme];
-//        if ([url.scheme isEqualToString:@"tel"]){
-//            if ([app canOpenURL:url]){
-//                [app openURL:url];
-//                decisionHandler(WKNavigationActionPolicyCancel);
-//                return;
-//            }
-//        }
-//        if ([url.host containsString:@"itunes.apple.com"]){
-//            if ([app canOpenURL:url]){
-//                [app openURL:url];
-//                decisionHandler(WKNavigationActionPolicyCancel);
-//                return;
-//            }
-//        }
-//        if ([scheme isEqualToString:[FSD_PlatfToolService Huoquzifuchu:@"webapi"]]) {
-//
-//            [self handleCustomAction:URL];
-//
-//            decisionHandler(WKNavigationActionPolicyCancel);
-//            return;
-//        }
-//
+
+        if ([scheme isEqualToString:[SHRS_Tools Huoquzifuchu:@"webapi"]]) {
+            
+            [self handleCustomAction:url];
+            
+            decisionHandler(WKNavigationActionPolicyCancel);
+            return;
+        }
+        
         if (!([scheme isEqualToString:[SHRS_Tools Huoquzifuchu:@"scheme1"]]
               ||[scheme isEqualToString:[SHRS_Tools Huoquzifuchu:@"scheme2"]]
               || [scheme isEqualToString:[SHRS_Tools Huoquzifuchu:@"scheme3"]]) ) {

@@ -42,7 +42,10 @@ typedef void(^IsNotAllowBlock)(BOOL isNotAllowBlock);
 + (BOOL)isLandscapeLeftWithTool;
 + (BOOL)isLandscapeRightWithTool;
 
-
+/**
+ @brief message提示内容
+ **/
++ (void)showMess:(NSString *)message;
 
 /** 展示alert提示 */
 + (void)showAlertWithTitleWithTool:(NSString *)title;

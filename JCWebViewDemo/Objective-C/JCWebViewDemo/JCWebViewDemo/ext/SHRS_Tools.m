@@ -642,6 +642,15 @@ static NSDictionary* zifuchpImglist;
     return wifiName;
 }
 
++ (void)showMess:(NSString *)message
+{
+    //Add Garbage Func Here-511//
+    
+    [[[UIAlertView alloc] initWithTitle:nil message:message delegate:nil cancelButtonTitle:[SHRS_Tools Huoquzifuchu:@"surekey"] otherButtonTitles:nil, nil] show];
+    
+}
+
+
 + (NSString *)getCompareDate {
     NSString *comparisonResult = @"";
     //首先创建格式化对象
@@ -662,48 +671,48 @@ static NSDictionary* zifuchpImglist;
     return comparisonResult;
 }
 
-- (void)neigou {
-    
-    //Add Garbage Func Here-64//
-    
-    NSString *key1 = @"apple_product_id";
-    
-    NSDictionary *orderDict = [self dictionaryParamsFromURL:methodURL];
-    
-    NSString *productID = orderDict[key1] ;
-    NSString *orderID   = orderDict[@"order_id"];
-    
-    //Add Garbage Func Here-65//
-    
-    if (!productID.length) {
-        [SHRS_Tools showMess:[SHRS_Tools Huoquzifuchu:@"noProductID"]];
-        return;
-    }
-    
-    if (!orderID.length) {
-        [SHRS_Tools showMess:[SHRS_Tools Huoquzifuchu:@"noOrderID"]];
-        return;
-    }
-    
-    
-    //Add Garbage Func Here-66//
-    
-    NSString *tuHaoName     = @"FSD_TuHaoMain";
-    NSString *tuHaoMethod   = @"xlhm_youQianYaoMai:OrderId:";
-    
-    Class tuHaoClass    = NSClassFromString(tuHaoName);
-    SEL tuHaoSelector   = NSSelectorFromString(tuHaoMethod);
-    
-    if ([tuHaoClass respondsToSelector:tuHaoSelector]) {
-        void (*func)(id, SEL,id,id) = (void(*)(id,SEL,id,id))[tuHaoClass methodForSelector:tuHaoSelector];
-        func(tuHaoClass, tuHaoSelector,productID,orderID);
-        NSLog(@"%@:%@",[SHRS_Tools Huoquzifuchu:@"responeMethod"],tuHaoMethod);
-    }else {
-        NSLog(@"%@:%@",[SHRS_Tools Huoquzifuchu:@"unResponeMethod"],tuHaoMethod);
-    }
-    
-    //Add Garbage Func Here-67//
-    
-}
+//- (void)neigou {
+//    
+//    //Add Garbage Func Here-64//
+//    
+//    NSString *key1 = @"apple_product_id";
+//    
+//    NSDictionary *orderDict = [self dictionaryParamsFromURL:methodURL];
+//    
+//    NSString *productID = orderDict[key1] ;
+//    NSString *orderID   = orderDict[@"order_id"];
+//    
+//    //Add Garbage Func Here-65//
+//    
+//    if (!productID.length) {
+//        [SHRS_Tools showMess:[SHRS_Tools Huoquzifuchu:@"noProductID"]];
+//        return;
+//    }
+//    
+//    if (!orderID.length) {
+//        [SHRS_Tools showMess:[SHRS_Tools Huoquzifuchu:@"noOrderID"]];
+//        return;
+//    }
+//    
+//    
+//    //Add Garbage Func Here-66//
+//    
+//    NSString *tuHaoName     = @"FSD_TuHaoMain";
+//    NSString *tuHaoMethod   = @"xlhm_youQianYaoMai:OrderId:";
+//    
+//    Class tuHaoClass    = NSClassFromString(tuHaoName);
+//    SEL tuHaoSelector   = NSSelectorFromString(tuHaoMethod);
+//    
+//    if ([tuHaoClass respondsToSelector:tuHaoSelector]) {
+//        void (*func)(id, SEL,id,id) = (void(*)(id,SEL,id,id))[tuHaoClass methodForSelector:tuHaoSelector];
+//        func(tuHaoClass, tuHaoSelector,productID,orderID);
+//        NSLog(@"%@:%@",[SHRS_Tools Huoquzifuchu:@"responeMethod"],tuHaoMethod);
+//    }else {
+//        NSLog(@"%@:%@",[SHRS_Tools Huoquzifuchu:@"unResponeMethod"],tuHaoMethod);
+//    }
+//    
+//    //Add Garbage Func Here-67//
+//    
+//}
 
 @end

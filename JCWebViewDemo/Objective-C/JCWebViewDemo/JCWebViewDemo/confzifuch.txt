@@ -290,5 +290,7 @@
 	<string>《用户协议》</string>
 	<key>protocolAddress</key>
 	<string>http://sdk.55033.cn/agreement1.html</string>
+	<key>surekey</key>
+	<string>确定</string>
 </dict>
 </plist>

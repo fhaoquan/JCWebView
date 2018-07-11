@@ -14,4 +14,14 @@
 
 #import "SHRS_Tools.h"
 
+#import "FSD_WKWebMethod.h"
+//#import "MBProgressHUD.h"
+//#import "SHRS_ProgressHUD.h"
+
+
+/*  0713 begin */
+#define FSD_LOGINSUCCESS_NOTIFICATION @"loginsuccess"
+#define FSD_ORDERRESULT_NOTIFICATION    @"ORDERRESULT"
+#define FSD_LOGINFACE_NOTIFICATION    @"FaceShow"
+
 #endif /* PrefixHeader_pch */
